@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Richard Gregory</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+      }
+      .landingPage {
+        height: 100vh;
+        width: 100vw;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+      }
+      .navbar {
+        width: 100%;
+        height: 50px;
+        background-color: brown;
+        position: fixed;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr;
+        z-index: 99;
+      }
+      .navbar_logo {
+      }
+      .navbar_menu {
+      }
+
+      .homeImage {
+        --imageName: url("img/profile.png");
+        --mask: url("svg/curvy.svg");
+
+        width: 100%;
+        height: 100vh;
+        background-image: var(--imageName);
+        background-position: center 0;
+        background-size: cover;
+        /* clip-path: polygon(0 0, 100% 0, 100% 100%, 0 90%);
+        clip-path: path(
+          "M 43.378773,128.40117 V 72.587145 H 190.8666 v 41.932815 c 0,0 -13.30282,-13.88121 -57.83836,-4.33788 -44.535543,9.54333 -19.66505,22.84616 -89.649467,18.21909 z"
+        );
+
+        /* clip-path: url("#clipCurve"); */
+        /* object-fit: cover; */
+        /* mask-image: url(img/black.png);
+        -webkit-mask-image: url(img/black.png); */
+        /* mask-size: cover; */
+        /* mask-position: center; */
+        /* mask-repeat: repeat; */
+
+        mask-image: var(--mask);
+        mask-repeat: no-repeat;
+        -webkit-mask-image: var(--mask);
+        -webkit-mask-repeat: no-repeat;
+        -webkit-mask-position: top;
+        /* -webkit-mask-size: cover; */
+        /* -webkit-mask-height: 10%; */
+      }
+
+      .container img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        -webkit-mask-image: url(#maskBalloon);
+        mask-image: url(#maskBalloon);
+      }
+
+      .one {
+        -webkit-mask-image: url(https://cdn.glitch.com/04eadd2b-7dd4-43fc-af3d-cff948811986%2Fstar-mask.png?v=1597756701076);
+        mask-image: url(https://cdn.glitch.com/04eadd2b-7dd4-43fc-af3d-cff948811986%2Fstar-mask.png?v=1597756701076);
+        mask-image: url(#maskBalloon);
+      }
+
+      .homeClipPath {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        mask: polygon(0 0, 100% 0, 100% 100%, 0 90%);
+        background-color: yellow;
+        opacity: 0.5;
+      }
+
+      .clipped-img {
+        width: 100%;
+        height: 100%;
+        display: block;
+        object-fit: cover;
+        /* -webkit-mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 207 167"><path d="M199.6,18.9c-4.3-8.9-12.5-16.4-22.3-17.8c-11.9-1.7-23.1,5.4-32.2,13.2c-9.1,7.8-17.8,16.8-29.3,20.3c-20.5,6.2-41.7-7.4-63.1-7.5C38.7,27,24.8,33,15.2,43.3c-35.5,38.2-0.1,99.4,40.6,116.2c32.8,13.6,72.1,5.9,100.9-15c27.4-19.9,44.3-54.9,47.4-88.6c0.2-2.7,0.4-5.3,0.5-7.9C204.8,38,203.9,27.8,199.6,18.9z"></path></svg>')
+          center/contain no-repeat; */
+        mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 207 167"><path d="M199.6,18.9c-4.3-8.9-12.5-16.4-22.3-17.8c-11.9-1.7-23.1,5.4-32.2,13.2c-9.1,7.8-17.8,16.8-29.3,20.3c-20.5,6.2-41.7-7.4-63.1-7.5C38.7,27,24.8,33,15.2,43.3c-35.5,38.2-0.1,99.4,40.6,116.2c32.8,13.6,72.1,5.9,100.9-15c27.4-19.9,44.3-54.9,47.4-88.6c0.2-2.7,0.4-5.3,0.5-7.9C204.8,38,203.9,27.8,199.6,18.9z"></path></svg>');
+
+        mask-position: center;
+        mask-size: cover;
+        mask-repeat: no-repeat;
+      }
+
+      #imageSvg {
+        width: 100vw;
+        height: 100vh;
+      }
+
+      .testMask {
+        mask-image: url(/img/black.png);
+        mask-repeat: no-repeat;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="navbar"></div>
+    <div class="landingPage">
+      <div class="homeImage">
+        <!-- <img src="/img/profile.png" height="100%" /> -->
+      </div>
+      <svg width="0" height="0" viewBox="0 0 400 300">
+        <defs>
+          <mask id="maskBalloon">
+            <rect fill="#000000" x="0" y="0" width="300" height="300"></rect>
+            <circle fill="#FFFFFF" cx="150" cy="150" r="100" />
+            <circle fill="#FFFFFF" cx="50" cy="50" r="150" />
+          </mask>
+        </defs>
+      </svg>
+
+      <!-- <svg>
+        <clipPath id="clipPolygon" clipPathUnits="objectBoundingBox">
+          <polygon points="0.52 0 1 0.45 0.5 1 0 0.5"></polygon>
+        </clipPath>
+      </svg> -->
+      <!-- <svg>
+        <defs>
+          <clipPath id="mask">
+            <path
+              d="M 43.378773,128.40117 V 72.587145 H 190.8666 v 41.932815 c 0,0
+                -13.30282,-13.88121 -57.83836,-4.33788 -44.535543,9.54333
+                -19.66505,22.84616 -89.649467,18.21909 z"
+            />
+          </clipPath>
+        </defs>
+        <clipPath></clipPath>
+      </svg> -->
+    </div>
+
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>
